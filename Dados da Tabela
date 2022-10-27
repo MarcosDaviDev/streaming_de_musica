@@ -110,3 +110,15 @@ VALUES (10,5,4);
 INSERT INTO rel_musica_album (musica_id_musica, album_id_album, ordem_musica)
 VALUES (11,5,5);
 COMMIT;
+
+--criação dos planos
+INSERT INTO plano (id_plano, titulo, descricao, valor, vigencia)
+VALUES (1, 'Individual', 'Plano individual total', 6.99, 30);
+INSERT INTO plano (id_plano, titulo, descricao, valor, vigencia)
+VALUES (2, 'Familiar', 'Plano familiar total', 9.79, 30);
+
+--criação dos usuários
+INSERT INTO usuario(id_usuario, email,senha, nome, plano_id_plano)
+VALUES (1, 'madruginha@descomplica.com.br', 'Senha123', 'Madruginha', 2);
+INSERT INTO usuario(id_usuario, email,senha, nome, id_usuario_resp, plano_id_plano)
+VALUES (2, 'chiquinha@descomplica.com,br', 'Senha123', 'Chiquinha',1,2);
