@@ -1,0 +1,31 @@
+--criação dos países
+INSERT INTO pais (id_pais, nome_pais, sigla)
+VALUES (2,'Reino Unido', 'UK');
+INSERT INTO pais (id_pais, nome_pais, sigla)
+VALUES (3, 'Finlandia', 'FL');
+INSERT INTO pais (id_pais, nome_pais, sigla)
+VALUES (4, 'Espanha', 'ES');
+INSERT INTO pais (id_pais, nome_pais, sigla)
+VALUES (5, 'Alemanha', 'AL');
+INSERT INTO pais (id_pais, nome_pais, sigla)
+VALUES (6, 'EUA', 'EUA');
+COMMIT;
+
+--criação dos estilos
+INSERT INTO estilo (id_estilo, estilo) 
+VALUES (1, 'Rock');
+INSERT INTO estilo (id_estilo, estilo) 
+VALUES (2, 'Country');
+INSERT INTO estilo (id_estilo, estilo) 
+VALUES (3, 'MPB');
+INSERT INTO estilo (id_estilo, estilo) 
+VALUES (4, 'POP');
+INSERT INTO estilo (id_estilo, estilo) 
+VALUES (5, 'Folk');
+INSERT INTO estilo (id_estilo, estilo) 
+VALUES (6, 'Sertanejo');
+INSERT INTO estilo (id_estilo, estilo) 
+VALUES (7, 'Blues');
+INSERT INTO estilo (id_estilo, estilo) 
+VALUES (8, 'Jazz');
+COMMIT;
