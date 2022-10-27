@@ -29,3 +29,84 @@ VALUES (7, 'Blues');
 INSERT INTO estilo (id_estilo, estilo) 
 VALUES (8, 'Jazz');
 COMMIT;
+
+--criação dos albuns
+INSERT INTO album (id_album, titulo, ano_lancamento, gravadora)
+VALUES (1, 'Yellow Submarine', 1969, 'Abbey Road');
+INSERT INTO album (id_album, titulo, ano_lancamento, gravadora)
+VALUES (3, 'Help!', 1965, 'Parlophone');
+INSERT INTO album (id_album, titulo, ano_lancamento, gravadora)
+VALUES (5, 'Inivitation',1985, 'Warner Bros');
+COMMIT;
+
+--criação dos artistas
+INSERT INTO artista (id_artista, nome, bibliografia, pais_id_pais)
+VALUES (1, 'The Beatles', 'Banda Inglesa muito famosa...', 2);
+INSERT INTO artista (id_artista, nome, bibliografia, pais_id_pais)
+VALUES (2, 'Jaco Pastorius', 'Baixista de Jazz...', 6);
+COMMIT;
+
+--inserindo as músicas
+INSERT INTO musica (id_musica, titulo, duracao, ano, letra, arquivo, tags,
+artista_id_artista, estilo_id_estilo) VALUES (2, 'Only a Northern Song', 214, 1969, 'I£ youre listening..',
+utl_raw.cast_to_raw('arquivo'), 'Anos 60;Psicolédica', 1, 1);
+
+INSERT INTO musica (id_musica, titulo, duracao, ano, letra, arquivo, tags,
+artista_id_artista, estilo_id_estilo) VALUES (3, 'All Together Now', 131, 1966, 'One, two, three..',
+utl_raw.cast_to_raw('arquivo'), 'Anos 60;Psicolédica', 1, 1);
+
+INSERT INTO musica (id_musica, titulo, duracao, ano, letra, arquivo, tags,
+artista_id_artista, estilo_id_estilo) VALUES (4, 'Hey Bulldog', 191, 1966, 'In the town...',
+utl_raw.cast_to_raw('arquivo'), 'Anos 60;Psicolédica', 1, 1);
+
+INSERT INTO musica (id_musica, titulo, duracao, ano, letra, arquivo, tags,
+artista_id_artista, estilo_id_estilo) VALUES (5, 'Its All Too Much', 385, 1966, 'Its all too much...',
+utl_raw.cast_to_raw('arquivo'), 'Anos 60;Psicolédica', 1, 1);
+
+INSERT INTO musica (id_musica, titulo, duracao, ano, letra, arquivo, tags,
+artista_id_artista, estilo_id_estilo) VALUES (6, 'All You Need Is Love', 191, 1966, 'Love, love, love...',
+utl_raw.cast_to_raw('arquivo'),'Anos 60;Psicolédica', 1, 1);
+
+INSERT INTO musica (id_musica, titulo, duracao, ano, letra, arquivo, tags,
+artista_id_artista, estilo_id_estilo) VALUES (7, 'Invitation', 417, 1983,'null', utl_raw.cast_to_raw('arquivo'), 'Jazz
+famosos;Jazz improviso', 2, 8);
+
+INSERT INTO musica (id_musica, titulo, duracao, ano, letra, arquivo, tags,
+artista_id_artista, estilo_id_estilo) VALUES (8, 'Amerika', 69, 1983,'null', utl_raw.cast_to_raw('arquivo'), 'Jazz cléssico;Jazz
+improviso', 2, 8);
+
+INSERT INTO musica (id_musica, titulo, duracao, ano, letra, arquivo, tags,
+artista_id_artista, estilo_id_estilo) VALUES (3, 'The Chicken', 409, 1983, 'null', utl_raw.cast_to_raw('argquivo'), 'Jazz
+classico;Jazz improviso', 2, 8);
+
+INSERT INTO musica (id_musica, titulo, duracao, ano, letra, arquivo, tags,
+artista_id_artista, estilo_id_estilo) VALUES (10, 'Continuum', 268, 1983,'null', utl_raw.cast_to_raw('arquivo'), 'Jazz
+classico;Jazz improviso', 2, 8);
+
+INSERT INTO musica (id_musica, titulo, duracao, ano, letra, arquivo, tags,
+artista_id_artista, estilo_id_estilo) VALUES (11, 'Liberty City', 273, 1983,'null', utl_raw.cast_to_raw('arquivo'), 'Jazz
+classico;Jazz improviso', 2, 8);
+COMMIT;
+
+--criação dos relacionamentos entre música e álbum, com a ordem da música no álbum
+INSERT INTO rel_musica_album (musica_id_musica, album_id_album, ordem_musica)
+VALUES (1,1,1);
+INSERT INTO rel_musica_album (musica_id_musica, album_id_album, ordem_musica)
+VALUES (2,1,2);
+INSERT INTO rel_musica_album (musica_id_musica, album_id_album, ordem_musica)
+VALUES (3,1,3);
+INSERT INTO rel_musica_album (musica_id_musica, album_id_album, ordem_musica)
+VALUES (4,1,4);
+INSERT INTO rel_musica_album (musica_id_musica, album_id_album, ordem_musica)
+VALUES (5,1,5);
+INSERT INTO rel_musica_album (musica_id_musica, album_id_album, ordem_musica)
+VALUES (7,5,1);
+INSERT INTO rel_musica_album (musica_id_musica, album_id_album, ordem_musica)
+VALUES (8,5,2);
+INSERT INTO rel_musica_album (musica_id_musica, album_id_album, ordem_musica)
+VALUES (9,5,3);
+INSERT INTO rel_musica_album (musica_id_musica, album_id_album, ordem_musica)
+VALUES (10,5,4);
+INSERT INTO rel_musica_album (musica_id_musica, album_id_album, ordem_musica)
+VALUES (11,5,5);
+COMMIT;
